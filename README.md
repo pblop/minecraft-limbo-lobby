@@ -7,6 +7,11 @@ A simple Minecraft limbo server in node.js.
 
 It just handles user login and keepalive
 
+----
+## How to use?
+
+Just rename config.json.example to config.json and modify it to your liking.
+
 ---
 ## Roadmap
 

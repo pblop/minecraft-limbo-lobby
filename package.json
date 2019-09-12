@@ -9,6 +9,13 @@
     "email": "pablo.rabanales@gmail.com",
     "url": "https://pabli.to"
   },
+  "scripts": {
+    "start": "node main.js"
+  },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "minecraft-protocol": "^1.9.4",
+    "uuid-1345": "^0.99.7"
+  }
 }
