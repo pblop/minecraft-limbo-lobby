@@ -9,13 +9,13 @@ const server = mc.createServer({
   version: '1.14.4'
 })
 
-console.log(`Server started on ${config.host}:${config.port}!`)
+console.log(`Server listening on ${config.host}:${config.port}!`)
 
 server.on('error', (err) => console.error(err))
 server.on('connection', client => console.log(client))
 
 server.on('login', client => {
-  console.log(`Client ${client.username} joined the server!`)
+  console.log(`${client.username} joined the server!`)
 
   client.write('login', {
     entityId: client.id,
