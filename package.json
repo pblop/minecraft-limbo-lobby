@@ -15,7 +15,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "minecraft-protocol": "^1.9.4",
-    "uuid-1345": "^0.99.7"
+    "minecraft-protocol": "^1.9.4"
   }
 }

@@ -1,6 +1,5 @@
 const mc = require('minecraft-protocol')
 const config = require('./config.json')
-const UUID = require('uuid-1345')
 
 const server = mc.createServer({
   'online-mode': false,
