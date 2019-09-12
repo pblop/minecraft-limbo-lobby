@@ -1,5 +1,5 @@
 const mc = require('minecraft-protocol')
-const config = require('./config.json')
+const config = require('./config.js')
 
 const server = mc.createServer({
   'online-mode': false,

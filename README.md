@@ -10,7 +10,7 @@ It just handles user login and keepalive
 ----
 ## How to use?
 
-Just rename config.json.example to config.json and modify it to your liking.
+Just rename config.js.example to config.js and modify it to your liking.
 
 ---
 ## Roadmap

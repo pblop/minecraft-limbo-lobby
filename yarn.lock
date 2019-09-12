@@ -176,7 +176,7 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-uuid-1345@^0.99.6, uuid-1345@^0.99.7:
+uuid-1345@^0.99.6:
   version "0.99.7"
   resolved "https://registry.yarnpkg.com/uuid-1345/-/uuid-1345-0.99.7.tgz#e52845074352feaae72ce7b31ae1f53b486ceea1"
   integrity sha512-A70cwvqH95zULri1/t00/r6Bd97hKpNvS9SoSLP9Bupn95sX/01JkOuH9YjJrmNul7ZAjyX3Y3ZMlDrCjuoNPQ==
