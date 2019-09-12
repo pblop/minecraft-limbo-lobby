@@ -15,8 +15,8 @@ server.on('error', (err) => console.error(err))
 server.on('connection', client => console.log(client))
 
 server.on('login', client => {
-  console.log('got client')
-  console.log(client.id)
+  console.log(`Client ${client.username} joined the server!`)
+
   client.write('login', {
     entityId: client.id,
     levelType: 'flat',
