@@ -44,4 +44,16 @@ server.on('login', client => {
     ]
   }
   client.write('chat', { message: JSON.stringify(msg), position: 0 })
+
+  if (config.boss_bar) {
+    client.write('boss_bar', {
+      entityUUID: 0,
+      action: 0,
+      title: JSON.stringify(config.boss_bar.title),
+      health: config.boss_bar.health == null ? 1 : config.boss_bar.health,
+      color: config.boss_bar.color == null ? 2 : config.boss_bar.color,
+      division: config.boss_bar.division == null ? 0 : config.boss_bar.division,
+      flags: 0x00
+    })
+  }
 })

@@ -1,4 +1,34 @@
 module.exports = {
   host: '0.0.0.0',
-  port: 25565
+  port: 25565,
+
+  // Boss bar! 
+  // Spec: https://wiki.vg/Protocol#Boss_Bar
+  // You're able to modify anything under the add action
+  // (code 0) but the flags
+  boss_bar: {
+    // Title
+    // Spec: https://wiki.vg/Chat
+    title: {
+      text: 'Limbo Server',
+      bold: true,
+      color: 'red',
+      extra: [
+        {
+          text: ' for Minecraft',
+          bold: false,
+          color: 'yellow'
+        },
+        {
+          text: '™',
+          bold: false,
+          italic: true,
+          color: 'yellow'
+        }
+      ] 
+    },
+    health: 1, // Optional, default value: 1
+    color: 2, // Optional, default value: 2
+    division: 0 // Optional, default value: 0
+  }
 }
