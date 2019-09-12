@@ -1,0 +1,14 @@
+{
+  "name": "minecraft-limbo-lobby",
+  "version": "a 0.1",
+  "description": "Minimal lobby server for Minecraft: Java Edition",
+  "main": "main.js",
+  "repository": "github:PabloPerezRodriguez/minecraft-limbo-lobby",
+  "author": {
+    "name": "Pablo Pérez Rodríguez",
+    "email": "pablo.rabanales@gmail.com",
+    "url": "https://pabli.to"
+  },
+  "license": "MIT",
+  "private": true
+}
