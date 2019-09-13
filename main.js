@@ -1,5 +1,10 @@
 const mc = require('minecraft-protocol')
 const config = require('./config.js')
+const Display = require('./display.js')
+
+const display = new Display()
+
+display.log(`Initializing server...`)
 
 const server = mc.createServer({
   'online-mode': false,
@@ -9,12 +14,24 @@ const server = mc.createServer({
   version: '1.14.4'
 })
 
-console.log(`Server listening on ${config.host}:${config.port}!`)
+display.userInputCallback = function commandHandler (command) {
+  switch (command) {
+    case 'end':
+    case 'stop':
+    case 'close':
+      display.log('Stopping the server')
+      process.exit(0)
+    default:
+      display.log(`Unknown command ${command}`)
+      break
+  }
+}
+display.log(`Server listening on ${config.host}:${config.port}!`)
 
 server.on('error', (err) => console.error(err))
 
 server.on('login', client => {
-  console.log(`${client.username} joined the server!`)
+  display.log(`${client.username} joined the server!`)
   client.registerChannel('minecraft:brand', ['string', []])
 
   client.write('login', {

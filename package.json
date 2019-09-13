@@ -15,6 +15,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "blessed": "^0.1.81",
     "minecraft-protocol": "^1.9.4"
   }
 }
