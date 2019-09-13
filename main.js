@@ -2,7 +2,7 @@ const mc = require('minecraft-protocol')
 const config = require('./config.js')
 const Display = require('./display.js')
 
-const display = new Display()
+const display = config.commandInterface ? new Display() : { log: console.log }
 
 display.log(`Initializing server...`)
 
@@ -14,26 +14,29 @@ const server = mc.createServer({
   version: '1.14.4'
 })
 
-display.userInputCallback = function commandHandler (command) {
-  switch (command) {
-    case 'list':
-      let clients = Object.values(server.clients)
-        .map(element => element.username)
-      const clientsLength = clients.length
-      if (clientsLength === 0) clients = 'None'
-      else clients = clients.join(', ')
-      display.log(`Clients connected (${clientsLength}): ${clients}`)
-      break
-    case 'end':
-    case 'stop':
-    case 'close':
-      display.log('Stopping the server')
-      process.exit(0)
-    default:
-      display.log(`Unknown command ${command}`)
-      break
+if (config.commandInterface) {
+  display.userInputCallback = function commandHandler (command) {
+    switch (command) {
+      case 'list':
+        let clients = Object.values(server.clients)
+          .map(element => element.username)
+        const clientsLength = clients.length
+        if (clientsLength === 0) clients = 'None'
+        else clients = clients.join(', ')
+        display.log(`Clients connected (${clientsLength}): ${clients}`)
+        break
+      case 'end':
+      case 'stop':
+      case 'close':
+        display.log('Stopping the server')
+        process.exit(0)
+      default:
+        display.log(`Unknown command ${command}`)
+        break
+    }
   }
 }
+
 display.log(`Server listening on ${config.host}:${config.port}!`)
 
 server.on('error', (err) => console.error(err))
