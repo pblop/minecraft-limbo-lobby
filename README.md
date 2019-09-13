@@ -15,5 +15,6 @@ Just rename config.js.example to config.js and modify it to your liking.
 ---
 ## Roadmap
 
+- [ ] Add stuff people add issues for
 - [ ] Handle multiple protocols
 - [ ] Load maps???
