@@ -35,14 +35,14 @@ server.on('login', client => {
     flags: 0x00
   })
 
-  const msg = {
-    translate: 'chat.type.announcement',
-    'with': [
-      'Server',
-      'Hello, world!'
-    ]
+  if (config.join_messages) {
+    for (const message of config.join_messages) {
+      client.write('chat', {
+        message: JSON.stringify(message),
+        position: message.position
+      })
+    }
   }
-  client.write('chat', { message: JSON.stringify(msg), position: 0 })
 
   if (config.boss_bar) {
     client.write('boss_bar', {

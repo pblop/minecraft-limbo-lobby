@@ -6,6 +6,7 @@ module.exports = {
   // Spec: https://wiki.vg/Protocol#Boss_Bar
   // You're able to modify anything under the add action
   // (code 0) but the flags
+  // Optional (remove to disable)
   boss_bar: {
     // Title
     // Spec: https://wiki.vg/Chat
@@ -30,5 +31,38 @@ module.exports = {
     health: 1, // Optional, default value: 1
     color: 2, // Optional, default value: 2
     division: 0 // Optional, default value: 0
-  }
+  },
+
+  // Messages to be shown whenever a user joins the game
+  // Spec: https://wiki.vg/Chat (and another optional field
+  // called position)
+  // Basically this (https://wiki.vg/Protocol#Chat_Message_.28clientbound.29)
+  // but flattened.
+  // Optional (remove to disable)
+  join_messages: [
+    {
+      text: 'Welcome to the Lobby!',
+      bold: true,
+      color: 'red',
+      position: 0
+    },
+    {
+      text: 'Click here to see the source!',
+      italic: true,
+      underlined: true,
+      color: 'yellow',
+      clickEvent: {
+        action: 'open_url',
+        value: 'https://github.com/PabloPerezRodriguez/minecraft-limbo-lobby'
+      },
+      hoverEvent: {
+        action: 'show_text',
+        value: {
+          text: 'If you click here you\'ll open GitHub!',
+          color: 'green'
+        }
+      },
+      position: 0
+    }
+  ]
 }
