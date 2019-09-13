@@ -1,6 +1,6 @@
 # minecraft-limbo-lobby
 
-A simple Minecraft limbo server in node.js.
+A simple and light-weight Minecraft limbo server written in node.js.
 
 ----
 ## What does it do?
