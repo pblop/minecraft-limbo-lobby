@@ -5,7 +5,7 @@ A simple and light-weight Minecraft limbo server written in node.js.
 ----
 ## What does it do?
 
-It just handles user login and keepalive
+It just handles user login and keeps the connection alive.
 
 ----
 ## How to use?
