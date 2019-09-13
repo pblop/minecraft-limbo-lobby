@@ -24,7 +24,7 @@ server.on('login', client => {
     dimension: 1,
     difficulty: 2,
     maxPlayers: server.maxPlayers,
-    reducedDebugInfo: false
+    reducedDebugInfo: true
   })
 
   client.write('position', {
