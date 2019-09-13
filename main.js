@@ -15,6 +15,7 @@ server.on('error', (err) => console.error(err))
 
 server.on('login', client => {
   console.log(`${client.username} joined the server!`)
+  client.registerChannel('minecraft:brand', ['string', []])
 
   client.write('login', {
     entityId: client.id,
@@ -25,6 +26,7 @@ server.on('login', client => {
     maxPlayers: server.maxPlayers,
     reducedDebugInfo: true
   })
+  client.writeChannel('minecraft:brand', 'PabloPerezRodriguez/minecraft-limbo-lobby')
 
   client.write('position', {
     x: 0,
