@@ -16,6 +16,14 @@ const server = mc.createServer({
 
 display.userInputCallback = function commandHandler (command) {
   switch (command) {
+    case 'list':
+      let clients = Object.values(server.clients)
+        .map(element => element.username)
+      const clientsLength = clients.length
+      if (clientsLength === 0) clients = 'None'
+      else clients = clients.join(', ')
+      display.log(`Clients connected (${clientsLength}): ${clients}`)
+      break
     case 'end':
     case 'stop':
     case 'close':
