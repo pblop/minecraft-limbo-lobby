@@ -12,7 +12,6 @@ const server = mc.createServer({
 console.log(`Server listening on ${config.host}:${config.port}!`)
 
 server.on('error', (err) => console.error(err))
-server.on('connection', client => console.log(client))
 
 server.on('login', client => {
   console.log(`${client.username} joined the server!`)
