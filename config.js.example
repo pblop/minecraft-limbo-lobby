@@ -1,7 +1,7 @@
 module.exports = {
   host: '0.0.0.0',
   port: 25565,
-  version: '1.16.1'
+  version: '1.16.1',
   commandInterface: true,
 
   // Boss bar! 
@@ -46,7 +46,6 @@ module.exports = {
       text: 'Welcome to the Lobby!',
       bold: true,
       color: 'red',
-      position: 0
     },
     {
       text: 'Click here to see the source!',
@@ -64,7 +63,6 @@ module.exports = {
           color: 'green'
         }
       },
-      position: 0
     }
   ]
 }

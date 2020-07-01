@@ -39,7 +39,66 @@ if (config.commandInterface) {
 
 display.log(`Server listening on ${config.host}:${config.port}!`)
 
-server.on('error', (err) => console.error(err))
+server.on('error', (err) => display.log(`Error: ${err}`))
+
+const the_end = {
+  piglin_safe: {
+    type: 'byte',
+    value: 0
+  },
+  natural: {
+    type: 'byte',
+    value: 0
+  },
+  ambient_light: {
+    type: 'float',
+    value: 0
+  },
+  infiniburn: {
+    type: 'string',
+    value: 'minecraft:infiniburn_end'
+  },
+  respawn_anchor_works: {
+    type: 'byte',
+    value: 0
+  },
+  has_skylight: {
+    type: 'byte',
+    value: 0
+  },
+  bed_works: {
+    type: 'byte',
+    value: 0
+  },
+  has_raids: {
+    type: 'byte',
+    value: 1
+  },
+  name: {
+    type: 'string',
+    value: 'minecraft:the_end'
+  },
+  logical_height: {
+    type: 'int',
+    value: 256
+  },
+  shrunk: {
+    type: 'byte',
+    value: 0
+  },
+  ultrawarm: {
+    type: 'byte',
+    value: 0
+  },
+  has_ceiling: {
+    type: 'byte',
+    value: 0
+  },
+  fixed_time: {
+    type: 'int',
+    value: 6000
+  }
+}
 
 server.on('login', client => {
   display.log(`${client.username} joined the server!`)
@@ -49,10 +108,16 @@ server.on('login', client => {
     entityId: client.id,
     levelType: 'flat',
     gameMode: 3,
-    dimension: 1,
+    previousGameMode: 255,
+    worldNames: ['minecraft:the_end'],
+    dimensionCodec: {name: '', type:'compound', value: {dimension: {type: 'list', value: {type: 'compound', value: [the_end]}}}},
+    dimension: 'minecraft:the_end',
+    worldName: 'minecraft:the_end',
     difficulty: 2,
+    hashedSeed: [0, 0],
     maxPlayers: server.maxPlayers,
-    reducedDebugInfo: true
+    reducedDebugInfo: true,
+    enableRespawnScreen: true
   })
   client.writeChannel('minecraft:brand', 'PabloPerezRodriguez/minecraft-limbo-lobby')
 
@@ -69,7 +134,8 @@ server.on('login', client => {
     for (const message of config.join_messages) {
       client.write('chat', {
         message: JSON.stringify(message),
-        position: message.position
+        position: message.position, 
+        sender: '0'
       })
     }
   }
