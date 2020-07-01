@@ -11,7 +11,7 @@ const server = mc.createServer({
   encryption: true,
   host: config.host,
   port: config.port,
-  version: '1.14.4'
+  version: config.version
 })
 
 if (config.commandInterface) {
