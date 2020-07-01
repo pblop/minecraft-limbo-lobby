@@ -1,6 +1,6 @@
 {
   "name": "minecraft-limbo-lobby",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Minimal lobby server for Minecraft: Java Edition",
   "main": "main.js",
   "repository": "github:PabloPerezRodriguez/minecraft-limbo-lobby",
